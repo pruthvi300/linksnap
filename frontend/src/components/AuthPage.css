@@ -1,0 +1,304 @@
+/* Auth Page Container */
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    position: relative;
+    overflow: hidden;
+    background: #0f172a;
+}
+
+/* Background Effects */
+.auth-bg-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    z-index: 0;
+    opacity: 0.4;
+}
+
+.orb-purple {
+    top: -10%;
+    left: -10%;
+    width: 40%;
+    height: 40%;
+    background: #7c3aed;
+}
+
+.orb-pink {
+    bottom: -10%;
+    right: -10%;
+    width: 40%;
+    height: 40%;
+    background: #db2777;
+}
+
+/* Content Wrapper */
+.auth-content {
+    width: 100%;
+    max-width: 900px;
+    /* Wider for split layout */
+    position: relative;
+    z-index: 10;
+}
+
+/* Auth Card (Split Layout) */
+.auth-card {
+    display: flex;
+    flex-direction: column;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 768px) {
+    .auth-card {
+        flex-direction: row;
+        min-height: 600px;
+        /* Increased to fit Register form comfortably */
+        height: 600px;
+        /* Fixed height for stability */
+    }
+}
+
+/* Left Side: Brand */
+.auth-brand-side {
+    flex: 1;
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+@media (min-width: 768px) {
+    .auth-brand-side {
+        border-bottom: none;
+        border-right: 1px solid rgba(255, 255, 255, 0.05);
+        padding: 4rem;
+    }
+}
+
+.brand-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 1.25rem;
+    background: linear-gradient(135deg, #7c3aed, #ec4899);
+    box-shadow: 0 15px 30px -5px rgba(124, 58, 237, 0.5);
+    margin-bottom: 1.5rem;
+    transform: rotate(3deg);
+    transition: transform 0.3s ease;
+}
+
+.auth-brand-side:hover .brand-logo {
+    transform: rotate(0deg) scale(1.05);
+}
+
+.brand-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.025em;
+}
+
+.brand-subtitle {
+    color: #94a3b8;
+    font-size: 1.125rem;
+    max-width: 280px;
+    line-height: 1.6;
+}
+
+/* Right Side: Form */
+.auth-form-side {
+    flex: 1.2;
+    /* Slightly wider form area */
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: rgba(15, 23, 42, 0.4);
+}
+
+@media (min-width: 768px) {
+    .auth-form-side {
+        padding: 3.5rem;
+    }
+}
+
+/* Toggle Switch */
+.auth-toggle {
+    display: flex;
+    background: rgba(30, 41, 59, 0.5);
+    padding: 0.25rem;
+    border-radius: 0.75rem;
+    margin-bottom: 2rem;
+}
+
+.toggle-btn {
+    flex: 1;
+    padding: 0.625rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: transparent;
+    color: #94a3b8;
+}
+
+.toggle-btn:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.toggle-btn.active {
+    background: #334155;
+    color: white;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+.form-label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #cbd5e1;
+    margin-bottom: 0.5rem;
+    margin-left: 0.25rem;
+}
+
+.form-input {
+    width: 100%;
+    background: #334155;
+    /* Lighter Slate 700 */
+    border: 1px solid rgba(51, 65, 85, 1);
+    border-radius: 0.75rem;
+    padding: 0.75rem 1rem;
+    color: white;
+    font-size: 1rem;
+    transition: all 0.2s;
+    outline: none;
+    caret-color: white;
+}
+
+.form-input:focus {
+    border-color: #8b5cf6;
+    box-shadow: 0 0 0 1px #8b5cf6;
+    background: #334155;
+}
+
+.form-input::placeholder {
+    color: #94a3b8;
+}
+
+/* Fix for Chrome/Edge Autofill white background */
+.form-input:-webkit-autofill,
+.form-input:-webkit-autofill:hover,
+.form-input:-webkit-autofill:focus,
+.form-input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #334155 inset !important;
+    /* Match lighter bg */
+    -webkit-text-fill-color: white !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Error Message */
+.auth-error {
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+}
+
+.error-icon {
+    color: #ef4444;
+    flex-shrink: 0;
+}
+
+.error-text {
+    color: #f87171;
+    font-size: 0.875rem;
+    margin: 0;
+}
+
+/* Submit Button */
+.auth-submit-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #7c3aed 0%, #8b5cf6 100%);
+    color: white;
+    font-weight: 700;
+    font-size: 1.125rem;
+    padding: 0.875rem;
+    border: none;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 10px 15px -3px rgba(124, 58, 237, 0.3);
+    margin-top: 0.5rem;
+}
+
+.auth-submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 25px -5px rgba(124, 58, 237, 0.4);
+}
+
+.auth-submit-btn:active {
+    transform: translateY(0);
+}
+
+.auth-submit-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.loading-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.loading-spinner {
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Footer */
+.auth-footer {
+    text-align: center;
+    margin-top: 2rem;
+    color: #64748b;
+    font-size: 0.875rem;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
