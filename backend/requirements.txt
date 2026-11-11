@@ -4,7 +4,7 @@ pymysql
 sqlalchemy
 databases
 python-jose
-passlib[bcrypt]
+passlib[argon2]
 python-multipart
 email-validator
 aiomysql

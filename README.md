@@ -8,6 +8,20 @@
 
 A full-stack URL shortener with user accounts, custom short codes, link expiry and click limits, per-link click analytics, and QR codes. The backend is **FastAPI** with **MySQL**; the frontend is **React + Vite** with a custom CSS design system.
 
+## 📸 Screenshots
+
+**Your links**: shorten a URL (with optional custom code, expiry and click limit) and manage your links
+
+![LinkSnap dashboard](docs/screenshots/dashboard.png)
+
+| Click analytics | QR code |
+|-----------------|---------|
+| ![Link statistics](docs/screenshots/analytics.png) | ![QR code](docs/screenshots/qr.png) |
+
+**Sign up / log in**
+
+![LinkSnap login](docs/screenshots/login.png)
+
 ## ✨ Features
 
 - **Short links**: turn a long URL into a short code, or choose your own custom code

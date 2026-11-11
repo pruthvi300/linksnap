@@ -136,14 +136,14 @@ function URLStats({ shortCode }) {
                         {stats.chart_data.map((item, index) => (
                             <div
                                 key={index}
-                                className="flex-1 flex flex-col items-center gap-3 group relative"
+                                className="flex-1 h-full flex flex-col items-center gap-3 group relative"
                             >
                                 {/* Tooltip for bar */}
                                 <div className="absolute bottom-full mb-3 bg-gray-800 text-white text-xs py-1.5 px-3 rounded-lg opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0 pointer-events-none whitespace-nowrap z-10 border border-gray-700 shadow-xl font-medium">
                                     {item.count} clicks on {new Date(item.date).toLocaleDateString()}
                                 </div>
 
-                                <div className="w-full relative h-full flex items-end">
+                                <div className="w-full relative flex-1 flex items-end">
                                     <div
                                         className="w-full rounded-t-lg transition-all duration-300 hover:opacity-90 group-hover:scale-y-105 origin-bottom"
                                         style={{
